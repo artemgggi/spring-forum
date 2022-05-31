@@ -23,12 +23,14 @@
             <thead>
             <tr>
                 <th scope="col">Тема</th>
+                <th scope="col">Создан</th>
             </tr>
             </thead>
             <tbody>
             <c:forEach items="${posts}" var="post">
                 <tr>
                     <td><c:out value="${post.name}"/></td>
+                    <td><c:out value="${post.created}"/></td>
                 </tr>
             </c:forEach>
             </tbody>

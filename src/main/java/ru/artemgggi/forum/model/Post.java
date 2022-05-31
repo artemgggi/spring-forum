@@ -1,20 +1,32 @@
 package ru.artemgggi.forum.model;
 
+import javax.persistence.*;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Objects;
 
+@Entity
+@Table(name="posts")
 public class Post {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
     private String description;
     private Calendar created;
+
+    //SimpleDateFormat sdf = new SimpleDateFormat("yyyy MMM dd HH:mm:ss");
 
     public static Post of(String name) {
         Post post = new Post();
         post.name = name;
         return post;
     }
+
+//    public String getFormatedDate(Calendar created) {
+//        return sdf.format(created.getTime());
+//    }
 
     public int getId() {
         return id;
